@@ -1,0 +1,9 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" 
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean class="beans.Test" id ="t" singleton = "false"/>
+</beans>
+
+<!-- In the default Spring dtd, we can define whether the scope of the bean class is Singleton or
+	prototype. If the scope is singleton the for all request, only one bean class object is created.
+	In case of prototype, for every request a new bean class object is created. Default is singleton -->
