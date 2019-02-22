@@ -16,17 +16,20 @@ public class StudentRegistrationService {
 		return studentRegistrationDAO.save(student);
 	}
 
-	public Student getAllStudents() {
-		return (Student)studentRegistrationDAO.findAll();
-	}
-
 	public Student getStudentById(Integer student_Id) {
 		return studentRegistrationDAO.findById(student_Id).get();
 	}
 
 	public Student getStudentByFName(String st_f_name) {
-		// TODO Auto-generated method stub
-		return null;
+		Student st = null;
+		for(Student stu : studentRegistrationDAO.findAll()) {
+			st = stu;
+		}
+		return studentRegistrationDAO.findById(st.getStudent_id()).get();
+	}
+
+	public Iterable<Student> getAllStudents() {
+		return studentRegistrationDAO.findAll();
 	}
 
 }
