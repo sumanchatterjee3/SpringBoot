@@ -9,19 +9,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 @Table(name="ticket")
 public class Ticket {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "ticket_id")
+	@Column(name = "ticket_id", nullable= true)
 	private Integer ticketId;
 	
 	@Column(name = "passenger_name", nullable=false)
 	private String passenger_Name;
 	
 	@Column(name = "booking_date")
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date boookingDate;
 	
 	@Column(name = "source_station")

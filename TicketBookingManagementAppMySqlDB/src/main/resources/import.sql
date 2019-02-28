@@ -1,0 +1,1 @@
+INSERT INTO ticket(ticket_id,passenger_name,booking_date,source_station,destination_station,email) VALUES(1,'Suman','2017-07-14','Patna','Delhi','suman@suman.com');
