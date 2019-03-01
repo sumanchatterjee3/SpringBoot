@@ -28,6 +28,10 @@ public class Person {
 	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date creationdate;
 	
+	public Person() {
+		
+	}
+	
 	public Person(int id, String firstname, String lastname, String email, Date creationdate) {
 		super();
 		this.id = id;
@@ -38,6 +42,16 @@ public class Person {
 	}
 	
 	
+	
+	
+	public Person(String firstname, String lastname, String email, Date creationdate) {
+		super();
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.email = email;
+		this.creationdate = creationdate;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -52,6 +66,30 @@ public class Person {
 	}
 	public Date getCreationdate() {
 		return creationdate;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+	public void setCreationdate(Date creationdate) {
+		this.creationdate = creationdate;
 	}
 
 
