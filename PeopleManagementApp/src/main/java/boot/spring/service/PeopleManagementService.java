@@ -22,5 +22,21 @@ public class PeopleManagementService {
 		return pList;
 		
 	}
+	public Iterable<Person> getPersonsById(List<Integer> idsIntegers) {
+		Iterable<Person> personListIterable = peoplemanagementdao.findAllById(idsIntegers);
+		return personListIterable;
+	}
+	public void deletePerson(Person person) {
+		peoplemanagementdao.delete(person);
+		
+	}
+	public void updatePersonEmailById(Integer idInteger ,String newEmailString) {
+		Person person = peoplemanagementdao.findById(idInteger).get();
+		person.setEmail(newEmailString);
+		peoplemanagementdao.save(person);
+	}
+	
+	
+	
 
 }

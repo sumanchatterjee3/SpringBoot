@@ -1,5 +1,6 @@
 package boot.spring;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -24,9 +25,37 @@ public class PeopleManagementAppApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 //		createPerson();
-		createPersons();
+//		createPersons();
+//		getPersonsByIds();
+//		deletePerson();
+		updatePersonEmailById();
 		}
 		
+
+		private void updatePersonEmailById() {
+		peoplemanagementservice.updatePersonEmailById(2,"suman1@suman.com");
+		
+	}
+
+		@SuppressWarnings("unused")
+		private void deletePerson() {
+			Person person = new Person();
+			person.setId(3);
+			peoplemanagementservice.deletePerson(person);
+	}
+
+		@SuppressWarnings("unused")
+		private void getPersonsByIds() {
+			List<Integer> idsIntegers = new ArrayList<>();
+			idsIntegers.add(1);
+			idsIntegers.add(2);
+			idsIntegers.add(3);
+			Iterable<Person> personListIterable = peoplemanagementservice.getPersonsById(idsIntegers);
+			personListIterable.forEach(System.out::println);
+		
+	}
+
+		@SuppressWarnings("unused")
 		private void createPersons() {
 		List<Person> personList = Arrays.asList(new Person("Suman", "Chatterjee", "suman1@suman.com", new Date()),
 				new Person("Sreemoyee", "Banerjee", "sree@suman.com", new Date()));
