@@ -13,6 +13,15 @@ public class PeopleManagementService {
 
 	@Autowired
 	private PeopleManagementDAO peoplemanagementdao;
+	
+	public Person createPerson(Person person1) {
+		return peoplemanagementdao.save(person1);
+	}
+
+	public Iterable<Person> createPersons(List<Person> personList) {
+		Iterable<Person> list = peoplemanagementdao.saveAll(personList);
+		return list;
+	}
 
 	public List<Person> getPersonsInfoByLastName(String lastName) {
 		
