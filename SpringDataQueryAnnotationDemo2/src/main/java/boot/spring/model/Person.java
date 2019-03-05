@@ -20,21 +20,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 @Entity
 @DynamicUpdate
 @Table(name="person")
-/*
-///////JPQL Query
-@NamedQueries(value = {
-		@NamedQuery(name = "Person.getPersonInfoByLastName", query = "SELECT p FROM PERSON p WHERE p.LASTNAME=?1") 
-		})
 
-*/
-
-
-//NamesSQL Query
-
-@NamedNativeQueries(value = { 
-		@NamedNativeQuery(name = "Person.getPersonsInfoByLastName", query = "SELECT * FROM person WHERE last_name=?1",resultClass=Person.class),
-		@NamedNativeQuery(name = "Person.getPersonsInfoByFirstNameAndEmail", query = "SELECT * FROM person WHERE first_name=?1 AND email=?2",resultClass=Person.class)
-		})
 public class Person {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
